@@ -61,6 +61,8 @@
  * Vamos utilizar um banco relacional pois é padrão do mercado.
  * Vamos utilizar o SQLite, porque o SQLite não precisaremos instalar nada em nossa máquina. Fica bem prático.
  * O banco será criado em um arquivo específico de nosso projeto. Vamos chamar de database.sqlite
+ * Vamos utilizar o Knex => Esse Knex é basicamente uma biblioteca que nos permite trabalhar com banco de dados
+ * SQL com uma linguagem unificada para todos os bancos (Postgres, MySQL, MariaDB...)
  */
 
 const users = [
