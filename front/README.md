@@ -62,3 +62,15 @@ extras para facilitar no processo de desenvolvimento. Sendo uma delas, a
 definição de uma baseURL. Ou seja, uma url de base que faremos
 várias requests.
 </p>
+strong>useEffect</strong>
+<p>Utilizamos o useEffect para executar uma determinada função, quando
+outro comportamento for realizado. Veja o exemplo abaixo:</p>
+<code>
+<pre>
+
+</pre>
+</code>
+O que temos no useEffect é uma promise;<br>
+Quando temos um array vazio no segundo parâmetro, estamos configurando para que
+a função do primeiro parâmetro seja executada apenas uma vez e assim que 
+o elemento for exibido em tela.<br>
