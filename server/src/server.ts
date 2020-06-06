@@ -59,6 +59,8 @@
  * Qual banco de dados vamos utilizar?
  * Temos bancos de dados relacionais e bancos de dados não relacionais(NoSQL).
  * Vamos utilizar um banco relacional pois é padrão do mercado.
+ * Vamos utilizar o SQLite, porque o SQLite não precisaremos instalar nada em nossa máquina. Fica bem prático.
+ * O banco será criado em um arquivo específico de nosso projeto. Vamos chamar de database.sqlite
  */
 
 const users = [
