@@ -47,7 +47,7 @@ que desejamos.</p>
 <p>Podemos utilizar em nossas aplicações react o 'react-icons' que carrega uma quantidade
 enorme de ícone. Para instalar basta executar o comando:
 <br></p>
-<code>npm instal react-icons</code>
+<code>npm install react-icons</code>
 <hr/>
 
 
