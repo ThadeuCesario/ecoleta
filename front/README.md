@@ -34,6 +34,15 @@ const Header: React.FC< HeaderProps > = props => {
 </pre>
 </code>
 <hr/>
+<strong>Estado e imutabilidade</strong>
+<p>O conceito de estado, é quando desejamos armazenar uma informação a partir do componente.<br/>
+Se quisermos que nosso componente reflita as informações de uma variável, precisamos
+aplicar o conceito de estado.</p>
+<p>O conceito de imutabilidade é que não podemos alterar o valor de um estado de uma 
+maneira direta, para isso precisamos utilizar o 'set..' e realizar as alterações
+que desejamos.</p>
+
+<hr/>
 
 <strong></strong>
 <p></p>
