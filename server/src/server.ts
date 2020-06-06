@@ -46,6 +46,11 @@
  * Geralmente utilizamos para realizarmos filtros e paginação.
  * Veja que no caso acima, estou passando um query params, com search e procurando todos usuários que contenham
  * a palavra 'li', está implementado dessa forma no código.
+ *
+ * Request Body: Corpo da requisição.
+ * Parâmetros para criação/atualização de informações.
+ * Por exemplo quando vamos criar um usuário, todos os dados desse usuário DEVE estar no request body.
+ * Ou por exemplo, vamos supor que estou atualizando a senha do usuário. Essa senha, precisa vir pelo request body.
  */
 
 const users = [
