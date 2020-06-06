@@ -57,7 +57,8 @@
  * Ou por exemplo, vamos supor que estou atualizando a senha do usuário. Essa senha, precisa vir pelo request body.
  *
  * Qual banco de dados vamos utilizar?
- *
+ * Temos bancos de dados relacionais e bancos de dados não relacionais(NoSQL).
+ * Vamos utilizar um banco relacional pois é padrão do mercado.
  */
 
 const users = [
