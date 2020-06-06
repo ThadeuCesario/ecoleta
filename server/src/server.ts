@@ -1,5 +1,9 @@
 /* Comentários:
  *
+ * Por padrão o express, não sabe que estamos desenvolvendo uma API rest. Por padrão ele não entende o body
+ * da requisição no formato de JSON. Por isso é fundamental logo após de criarmos nosso app, declará-lo para que
+ * ele possa entender o corpo de nossa requisição no formato de json.
+ *
  * Rotas: (Endereço completo de nossa requisição)
  * http:localhost:3333/users
  *
@@ -67,6 +71,8 @@ import express from 'express';
 
 const app = express();
 
+app.use(express.json());
+
 app.get('/users', (request, response) => {
     const search = String(request.query.search);
 
@@ -82,6 +88,10 @@ app.get('/users/:id', (request, response) => {
 })
 
 app.post('/users', (request, response) => {
+    const data = request.body;
+
+    console.log(data);
+
     const user = {
         name: 'Thadeu',
         email: 'thadeu@email.com.br'
