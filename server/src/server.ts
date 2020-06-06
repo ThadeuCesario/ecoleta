@@ -34,6 +34,14 @@
  * Veja o exemplo:
  * app.get('/users/:id', (request, response) => {})
  * O ':id' é uma parâmetro que podemos passar para nossa rota. Além disso, ele poderá ser acessado dentro de nossa aplicação.
+ *
+ * Resquest Param (Geralmente obrigatório):
+ * Parâmetros que vem da própria rota que identificam um recurso. Geralmente é utilizando quando queremos
+ * buscar um único usuário, quando queremos atualizar um único usuário, quando queremos deletar um único usuário.
+ * Sempre que precisarmos identificar especificamente a entidade, utilizamos o request param.
+ *
+ * Query Param (Não obrigatórios):
+ * Geralmente utilizamos para realizarmos filtros e paginação.
  */
 
 const users = [
@@ -51,6 +59,10 @@ import express from 'express';
 const app = express();
 
 app.get('/users', (request, response) => {
+    const search = request.query.search;
+
+    console.log(search);
+
     response.json(users);
 });
 
