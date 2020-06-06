@@ -41,7 +41,11 @@
  * Sempre que precisarmos identificar especificamente a entidade, utilizamos o request param.
  *
  * Query Param (Não obrigatórios):
+ * São parâmetros que vem na própria rota. Exemplo:
+ * http://localhost:3333/users/?search=li
  * Geralmente utilizamos para realizarmos filtros e paginação.
+ * Veja que no caso acima, estou passando um query params, com search e procurando todos usuários que contenham
+ * a palavra 'li', está implementado dessa forma no código.
  */
 
 const users = [
