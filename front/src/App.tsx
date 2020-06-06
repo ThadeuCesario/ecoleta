@@ -1,9 +1,17 @@
+/* Import Libs */
 import React from 'react';
+
+/* Import Components */
+import Header from "./Header";
+
+/* Import CSS */
 import './App.css';
 
 function App() {
   return (
-      <h1>Hello Ecoleta Project</h1>
+      <>
+        <Header title={'Hello World'}/>
+      </>
   );
 }
 
