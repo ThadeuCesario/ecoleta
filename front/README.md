@@ -49,11 +49,16 @@ enorme de ícone. Para instalar basta executar o comando:
 <br></p>
 <code>npm install react-icons</code>
 <hr/>
-
-
-<hr/>
 <strong>Leaflet</strong>
 <p> Vamos utilizar o React Leaflet para integração de mapas. Não vamos utilizar
 o google maps.
 </p>
 <hr/>
+<strong>Axios</strong>
+<p> Em nossa aplicação no frontend estamos utilizando o axios para realizar 
+as requisições para nossa api. 
+Isso porque, diferente do fetch o axios nos permite algumas configurações
+extras para facilitar no processo de desenvolvimento. Sendo uma delas, a
+definição de uma baseURL. Ou seja, uma url de base que faremos
+várias requests.
+</p>
