@@ -7,6 +7,13 @@
  *    quando estamos tratando sobre caminho, é muito importante utilizarmos um pacote que vem com o node chamado 'path'.
  *    Vamos utilizar o path.resolve(), que basicamente resolve alguns caminhos para nós, com base em nosso sistema operacional.
  *    __dirname -> variavel global do 'path', que retorna o diretório que essa mesma variável está sendo executada.
+ *
+ * -----------
+ * Banco de dados:
+ * Quando temos um relacionamento de muitos para muitos, ou seja, N para N. Utilizamos geralmente uma tabela Pivot.
+ * Geralmente essa tabela tem um nome derivado das duas tabelas que estamos relacionando. Então por exemplo:
+ * Tabela 'points' e Tabela 'items' . Nossa tabela pivot seria: 'point_items'.
+ * Basicamente essa tabela armazenará os relacionamentos dos itens que um ponte de coleta poderá coletar =) .
  */
 
 import knex from 'knex';
