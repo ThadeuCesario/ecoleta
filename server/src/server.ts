@@ -59,11 +59,11 @@ import express from 'express';
 const app = express();
 
 app.get('/users', (request, response) => {
-    const search = request.query.search;
+    const search = String(request.query.search);
 
-    console.log(search);
+    const filteredUsers = search ? users.filter(user => user.includes(search)) : users;
 
-    response.json(users);
+    response.json(filteredUsers);
 });
 
 app.get('/users/:id', (request, response) => {
