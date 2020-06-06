@@ -49,3 +49,11 @@ enorme de ícone. Para instalar basta executar o comando:
 <br></p>
 <code>npm instal react-icons</code>
 <hr/>
+
+
+<hr/>
+<strong>Leaflet</strong>
+<p> Vamos utilizar o React Leaflet para integração de mapas. Não vamos utilizar
+o google maps.
+</p>
+<hr/>
