@@ -87,11 +87,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (request, response) => {
-    const search = String(request.query.search);
-
-    const filteredUsers = search ? users.filter(user => user.includes(search)) : users;
-
-    response.json(filteredUsers);
+    return response.json({message: 'Hello world'});
 });
 
 app.listen(3333);
