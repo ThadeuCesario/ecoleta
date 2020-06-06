@@ -93,8 +93,8 @@ app.post('/users', (request, response) => {
     console.log(data);
 
     const user = {
-        name: 'Thadeu',
-        email: 'thadeu@email.com.br'
+        name: data.name,
+        email: data.email
     };
 
     return response.json(user);
