@@ -65,6 +65,9 @@
  * Vamos utilizar o Knex => Esse Knex é basicamente uma biblioteca que nos permite trabalhar com banco de dados
  * SQL com uma linguagem unificada para todos os bancos (Postgres, MySQL, MariaDB...)
  * Além disso, vamos poder escrever nossas queries em formato de javascript =) .
+ *
+ * Banco de dados:    SELECT * FROM users WHERE name = 'Diego'
+ * Knex:              knex('users').where('name', 'Diego').select('*')
  */
 
 const users = [
