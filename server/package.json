@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "knex:migrate": "npx knex migrate:latest --knexfile knexfile.ts migrate:latest"
+    "knex:migrate": "npx knex --knexfile knexfile.ts migrate:latest",
+    "knex:seed": "npx knex --knexfile knexfile.ts seed:run"
   },
   "keywords": [],
   "author": "",
