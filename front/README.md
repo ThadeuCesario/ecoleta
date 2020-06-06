@@ -43,6 +43,12 @@ maneira direta, para isso precisamos utilizar o 'set..' e realizar as alteraçõ
 que desejamos.</p>
 
 <hr/>
+<strong>Pacote de ícones de react</strong>
+<p>Podemos utilizar em nossas aplicações react o 'react-icons' que carrega uma quantidade
+enorme de ícone. Para instalar basta executar o comando:
+<br></p>
+<code>npm instal react-icons</code>
+<hr/>
 
 <strong></strong>
 <p></p>
