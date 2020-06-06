@@ -1,17 +1,15 @@
 /* Import Libs */
 import React from 'react';
 
-/* Import Components */
-import Home from "./pages/Home";
-
 /* Import CSS */
 import './App.css';
 
+/* Import Route */
+import Routes from "./routes";
+
 function App() {
   return (
-      <>
-        <Home />
-      </>
+      <Routes />
   );
 }
 

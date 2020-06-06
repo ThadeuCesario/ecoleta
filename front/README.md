@@ -49,7 +49,3 @@ enorme de ícone. Para instalar basta executar o comando:
 <br></p>
 <code>npm instal react-icons</code>
 <hr/>
-
-<strong></strong>
-<p></p>
-<hr/>
