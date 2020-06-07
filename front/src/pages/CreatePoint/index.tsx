@@ -31,12 +31,19 @@ const CreatePoint = () => {
     const [cities, setCities] =  useState<string[]>([]);
     const [selectedCity, setSelectedCity] = useState('0');
     const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0,0]);
+    const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0]);
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(position => {
+            console.log(position);
+        })
+    }, []);
 
     useEffect(() => {
         api.get('items').then(response => {
             setItems(response.data)
         })
-    }, [])
+    }, []);
 
     useEffect(() => {
         axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
@@ -44,7 +51,7 @@ const CreatePoint = () => {
                 const ufInitials = response.data.map(uf => uf.sigla);
                 setUfs(ufInitials);
             })
-    }, [])
+    }, []);
 
     useEffect(() => {
         // @ts-ignore
@@ -59,7 +66,7 @@ const CreatePoint = () => {
                 setCities(cityNames);
             });
 
-    }, [selectedUf])
+    }, [selectedUf]);
 
     function handleSelectUf(event: ChangeEvent<HTMLSelectElement>){
         const uf = event.target.value;
