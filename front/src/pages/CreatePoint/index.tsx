@@ -35,7 +35,9 @@ const CreatePoint = () => {
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(position => {
-            console.log(position);
+            const {latitude, longitude} = position.coords;
+
+            setInitialPosition([latitude, longitude]);
         })
     }, []);
 
@@ -133,7 +135,7 @@ const CreatePoint = () => {
                         <span>Selecione o endereço no mapa</span>
                     </legend>
 
-                    <Map center={[-23.4790741, -46.7381877]} zoom={15} onClick={handleMapClick}>
+                    <Map center={initialPosition} zoom={15} onClick={handleMapClick}>
                         <TileLayer
                             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
