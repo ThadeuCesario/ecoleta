@@ -4,6 +4,7 @@ import logo from '../../assets/logo.svg';
 import {Link} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
 import {Map, TileLayer, Marker} from 'react-leaflet';
+import {LeafletMouseEvent} from 'leaflet';
 import api from "../../Services/api";
 import axios from 'axios';
 
@@ -29,6 +30,7 @@ const CreatePoint = () => {
     const [selectedUf, setSelectedUf] = useState('0');
     const [cities, setCities] =  useState<string[]>([]);
     const [selectedCity, setSelectedCity] = useState('0');
+    const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0,0]);
 
     useEffect(() => {
         api.get('items').then(response => {
@@ -71,8 +73,11 @@ const CreatePoint = () => {
         setSelectedCity(city);
     }
 
-    function handleMapClick(){
-        console.log('clicou no mapa');
+    function handleMapClick(event: LeafletMouseEvent){
+        setSelectedPosition([
+            event.latlng.lat,
+            event.latlng.lng
+        ]);
     }
 
     return(
@@ -127,7 +132,7 @@ const CreatePoint = () => {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
 
-                        <Marker position={[-23.4790741, -46.7381877]}/>
+                        <Marker position={selectedPosition}/>
                     </Map>
 
                     <div className={'field-group'}>
