@@ -1,6 +1,7 @@
 import express from 'express';
 
 const app = express();
+app.use(express.json());
 
 /**
  * Rota: Endereço completo de nossa requisição
@@ -16,7 +17,16 @@ const app = express();
  * Parâmetros que vem na própria rota e que identificam um recurso.
  * 
  * Query Param:
+ * Parâmetros que vem na própria rota geralmente opcionais para filtros, paginação.
  * 
+ * Request Body:
+ * Corpo da requisição. Basicamente são parâmetros para a criação/atualização de informações.
+ * 
+ * ----------------
+ * Banco de dados
+ * Vamos utilizar o SQLite através do Knex.
+ * select * from user where name = 'Diego'
+ * knex('users').where('name', 'Diego').select('*');
  */
 
 const users = [
@@ -51,9 +61,14 @@ app.get('/users/:id', (request, response) => {
 });
 
 app.post('/users', (request, response) => {
+
+    const {body} = request;
+
+    console.log(body);
+
     const user = {
-        name: 'Thadeu',
-        email: 'thadeu.cesario@icloud.com',
+        name: body.name,
+        email: body.email,
     };
 
     return response.json(user);
