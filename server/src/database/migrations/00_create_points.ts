@@ -1,4 +1,3 @@
-import { knex } from 'knex';
 /**
  * Veja que estou utilizando letra maiúscula, isso porque quando estou
  * me referindo ao tipo da variável que estou importando e não a própria
