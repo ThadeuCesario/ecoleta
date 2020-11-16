@@ -32,7 +32,11 @@ app.get('/users/:id', (request, response) => {
      * Para isso, bastou converter em número.
      */
 
+    console.log("user id", id);
+
     const user = users[Number(id)];
+
+    return response.json({user});
 });
 
 app.post('/users', (request, response) => {
