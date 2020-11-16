@@ -9,3 +9,9 @@ const connection = knex({
 });
 
 export default connection;
+
+/*
+ * Migrations = Histórico do banco de dados
+ * A ordem em que as migrations estão dentro de sua pasta, será a mesma 
+ * que ela será executada.
+ */
