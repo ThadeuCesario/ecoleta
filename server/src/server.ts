@@ -13,13 +13,26 @@ const app = express();
  * DELETE: Deletar uma informação existente no back-end 
  */
 
+const users = [
+    "Thadeu",
+    "Karina",
+    "Katharina",
+];
+
 app.get('/users', (request, response) => {
     console.log("Listagem de usuários");
-    response.json([
-        "Thadeu",
-        "Karina",
-        "Katharina",
-    ]);
+    response.json(users);
+});
+
+app.get('/users/:id', (request, response) => {
+    const {id} = request.params;
+    
+    /* O Typescript apontou um problema, pois estamos utilizando o id como string, porém precisa 
+     * ser um número. 
+     * Para isso, bastou converter em número.
+     */
+
+    const user = users[Number(id)];
 });
 
 app.post('/users', (request, response) => {
