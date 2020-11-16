@@ -7,7 +7,7 @@
 
 import Knex from 'knex';
 
-export async function up(knex) {
+export async function up(knex: Knex) {
     // Criar a tabela
 }
 
