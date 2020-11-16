@@ -11,6 +11,12 @@ const app = express();
  * POST: Criar uma nova informação no back-end
  * PUT: Atualizar uma informação existente no back-end
  * DELETE: Deletar uma informação existente no back-end 
+ * 
+ * Request Param: 
+ * Parâmetros que vem na própria rota e que identificam um recurso.
+ * 
+ * Query Param:
+ * 
  */
 
 const users = [
@@ -20,8 +26,13 @@ const users = [
 ];
 
 app.get('/users', (request, response) => {
-    console.log("Listagem de usuários");
-    response.json(users);
+    const {search} = request.query;
+
+    if(!search) return response.json({message: "no users found"});
+
+    const filteredUsers = users.filter(user => user.toLowerCase().includes(String(search)));
+
+    return response.json(filteredUsers);
 });
 
 app.get('/users/:id', (request, response) => {
