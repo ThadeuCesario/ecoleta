@@ -24,5 +24,5 @@ export async function up(knex: Knex) {
 
 export async function down(knex: Knex) {
     // Deletar a tabela - o método down reverte o método down
-    return knex.schema.dropTable('point');
+    return knex.schema.dropTable('points');
 }
