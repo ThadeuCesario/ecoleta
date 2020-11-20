@@ -5,17 +5,20 @@ class PointsController {
     async show(request: Request, response: Response) {
         const {id} = request.params;
 
+        console.log("--- verficiando id ----", id);
         const point = await knex('points').where('id', id).first();
 
         if (!point) {
             return response.status(400).json({message: 'Point not found.'})
         }
 
+        
+        console.log("1");
         const items = await knex("items")
         .join("point_items", "items.id", "=", "point_items.item_id")
         .where("point_items.point_id", id)
         .select("items.title");
-            
+        console.log("2");
         console.log("checking items", items);
 
         return response.json({point, items});
