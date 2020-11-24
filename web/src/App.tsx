@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from './Header.tsx';
+import Header from './Header';
 
 function App() {
   return (
     <div>
-      <Header title="Hello World" />
+      <Header />
       <h1>Conteúdo do aplicação</h1>
     </div>
     
