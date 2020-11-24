@@ -1,10 +1,19 @@
 import React from 'react';
 
-const Header = () => {
+interface HeaderProps {
+    title: string;
+}
+
+/* FC => componente escrito em formato de função.
+ * Esse FC é basicamente um generic, ou seja, um tipo do typescript que pode
+ * receber um parametro.
+ */
+const Header: React.FC<HeaderProps> = props => {
+    const {title} = props;
     return(
-        <h1>
-            Ecoleta
-        </h1>
+        <header>
+            <h1>{title}</h1>
+        </header>
     );
 }
 
