@@ -1,17 +1,11 @@
 import React, {useState} from 'react';
+import Home from './pages/Home';
 import './App.css';
-import Header from './Header';
 
 function App() {
-  const [counter, setCounter] = useState(0);
-
-  function handleButtonClick() {
-    setCounter(counter + 1);
-  }
-
   return (
     <>
-      <h1>Hello World</h1>
+      <Home />
     </>
   );
 }
