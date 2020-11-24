@@ -11,9 +11,7 @@ function App() {
 
   return (
     <>
-      <Header title='Hello World'/>
-      <span>{counter}</span>
-      <button type="button" onClick={handleButtonClick}>Aumentar</button>
+      <h1>Hello World</h1>
     </>
   );
 }
