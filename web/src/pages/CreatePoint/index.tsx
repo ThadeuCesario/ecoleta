@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
-import {} from 'react-leaflet';
 import logo from '../../assets/logo.svg';
 import {MapContainer, TileLayer, Marker} from 'react-leaflet';
+import axios from 'axios';
 import api from '../../services/api';
 
 // Array ou objeto: manualmente informar o tipo da variável.
@@ -15,14 +15,28 @@ interface Item {
   image_url: string;
 }
 
+interface IBGEUFResponse {
+  sigla: string;
+}
+
 const CreatePoint = () => {
   const [items, setItems] = useState<Item[]>([]);
+  const [ufs, setUfs] = useState<string[]>([]);
 
   useEffect(() => {
     api.get('items').then(response => {
       return setItems(response?.data);
     })
   }, []);
+
+  useEffect(() => {
+    axios
+      .get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
+      .then(response => {
+        const ufInitials = response.data.map(uf => uf.sigla);
+        setUfs(ufInitials);
+      })
+  }, [])
 
   return(
     <div id="page-create-point">
