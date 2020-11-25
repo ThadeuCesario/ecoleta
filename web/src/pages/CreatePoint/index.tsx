@@ -108,6 +108,11 @@ const CreatePoint = () => {
               <label htmlFor="uf">Estado (UF)</label>
               <select name="uf" id="uf">
                 <option value="0">Selecione uma UF</option>
+                {ufs.map(uf => {
+                  return (
+                  <option key={uf} value={uf}>{uf}</option>
+                  )
+                })}
               </select>
             </div>
             <div className="field">
