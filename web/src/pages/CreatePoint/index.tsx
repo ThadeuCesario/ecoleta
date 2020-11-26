@@ -3,7 +3,7 @@ import './styles.css';
 import {Link} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
 import logo from '../../assets/logo.svg';
-import {MapContainer, TileLayer, Marker} from 'react-leaflet';
+import {MapContainer, TileLayer, Marker, useMapEvents} from 'react-leaflet';
 import axios from 'axios';
 import api from '../../services/api';
 
@@ -28,7 +28,7 @@ const CreatePoint = () => {
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [selectedUf, setSelectedUf] = useState('0');
-  const [selectedCity, setSelectedCity] = useState('0';)
+  const [selectedCity, setSelectedCity] = useState('0');
 
   useEffect(() => {
     api.get('items').then(response => {
@@ -44,6 +44,10 @@ const CreatePoint = () => {
   function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
     const city = event.target.value;
     setSelectedCity(city);
+  }
+
+  function handleMapClick() {
+    console.log("Handle Map Click")
   }
 
   useEffect(() => {
@@ -65,6 +69,15 @@ const CreatePoint = () => {
         setCities(cityNames);
       });
   }, [selectedUf]);
+
+  function MyComponent() {
+    const map = useMapEvents({
+      click: (e) => {
+        console.log(e);
+      }
+    });
+    return null;
+  }
 
   return(
     <div id="page-create-point">
@@ -123,11 +136,12 @@ const CreatePoint = () => {
             <span>Selecione o endereço no mapa</span>
           </legend>
 
-          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} >
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+            <MyComponent />
             <Marker position={[51.505, -0.09]} />
           </MapContainer>
 
